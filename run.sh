@@ -1,0 +1,3 @@
+export HTTPS_PROXY=socks5h://127.0.0.1:8080
+emcc -DHAVE_KALLOC memory_aligned.c align.c bseq.c esterr.c format.c hit.c index.c jump.c kalloc.c ksw2_dispatch.c ksw2_extd2_sse.c ksw2_exts2_sse.c ksw2_extz2_sse.c ksw2_ll_sse.c kthread.c lchain.c map.c misc.c options.c pe.c sdust.c seed.c sketch.c splitidx.c wasm_wrap.c -o minimap2.js -O3 -s USE_ZLIB=1 -msimd128 -msse2 -s ALLOW_MEMORY_GROWTH=1 -s MODULARIZE=1 -s EXPORT_NAME=createMinimap2Module -s EXPORTED_FUNCTIONS="['_run_minimap2_wasm','_wasm_free']" -s EXPORTED_RUNTIME_METHODS="['cwrap','UTF8ToString','FS_createDataFile','FS_readFile','FS_unlink']"  -s INITIAL_MEMORY=536870912 -s STACK_SIZE=8388608
+
